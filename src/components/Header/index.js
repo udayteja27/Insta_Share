@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
@@ -28,6 +29,7 @@ const Header = props => {
         const showSearchBar = () => {
           setShowSearchBar(!searchBarVisible)
         }
+
         const changeSearchText = async event => {
           upDateSearchText(event.target.value)
           resetSearchButton()
@@ -125,7 +127,7 @@ const Header = props => {
                     onClick={getUserSearchPosts}
                     className="searchButton"
                     type="button"
-                    data-testid="searchIcon"
+                    testid="searchIcon"
                   >
                     <FaSearch className="searchIcon" />
                   </button>
@@ -161,7 +163,7 @@ const Header = props => {
                 </div>
                 <button
                   onClick={() => setHamburgerButton(!isOpen)}
-                  data-testid="hamburgerIcon"
+                  testid="hamburgerIcon"
                   className="hamburgerButton"
                   type="button"
                 >
@@ -208,7 +210,7 @@ const Header = props => {
                     onClick={getUserSearchPosts}
                     className="searchButton"
                     type="button"
-                    data-testid="searchIcon"
+                    testid="searchIcon"
                   >
                     <FaSearch className="searchIcon" />
                   </button>
