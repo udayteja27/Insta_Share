@@ -10,12 +10,21 @@ class Home extends Component {
     return (
       <SearchContext.Consumer>
         {value => {
-          const {searchPosts} = value
+          const {searchPosts, searchText} = value
           return (
             <div className="home_container">
-              <Header />
-              <UserStories />
-              <UserPosts searchPosts={searchPosts} />
+              {searchText !== '' && searchPosts ? (
+                <>
+                  <Header />
+                  <UserPosts searchPosts={searchPosts} />
+                </>
+              ) : (
+                <>
+                  <Header />
+                  <UserStories />
+                  <UserPosts searchPosts={searchPosts} />
+                </>
+              )}
             </div>
           )
         }}
